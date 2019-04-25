@@ -9,6 +9,9 @@
     /* vertical gutter */
     margin-bottom: calc( var(--gutter) / 3);
     background-color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .grid-item--height2 {
     height: 300px;
@@ -18,4 +21,7 @@
 }
 .grid-item--height4 {
     height: 500px;
+}
+.g1 {
+    background-image: url('https://via.placeholder.com/260x200');
 }
