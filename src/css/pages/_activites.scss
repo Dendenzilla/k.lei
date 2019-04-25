@@ -1,0 +1,13 @@
+.acti {
+    width: 100%;
+    border:1px solid black;
+    &__desc{
+        padding-left: 20px;
+        width: 100%;
+        border:1px solid red;
+        margin: 0;
+    }
+    & h2 {
+        text-transform: uppercase;
+    }
+}
