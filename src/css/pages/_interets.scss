@@ -20,9 +20,14 @@
 }
 .panel {
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid gold;
+    display: flex;
     & h1 {
-        font-size: 120px;
+        font-size: 10vw;
+    }
+    & img {
+        max-width: 100%;
+        padding: 10px 0;
     }
 }
 .panelR {

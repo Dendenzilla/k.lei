@@ -10,10 +10,18 @@ $('.panelL').each(function(){ plH+=$(this).outerHeight(true) });
 
 // ON DONNE AU BODY LA HAUTEUR DE LA SOMME DES panelR
     $("body").height(prH);
+    console.log($("body").height());
     console.log(prH);
     console.log(plH);
+    if ( plH < prH ) {
+        var diffH = prH - plH;
+        console.log(diffH);
+        $(".leftcol").css('padding-bottom', (prH - plH));
+    }
 });
-// ON DEPLACE LA COLONNE DE DROITE AU SCROLL
+
+// ON DEPLACE LA COLONNE DE DROITE AU SCROLL 
+// (BOTTOM = DISTANCE DU SCROLL x -1)
 $(window).on('scroll',function(){
     $(".rightcol").css('bottom',$(window).scrollTop()*-1);
 });
