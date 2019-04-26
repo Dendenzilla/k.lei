@@ -1,18 +1,20 @@
-// ***************************
+// ****************************
 // 1. Déclaration des variables
-// ***************************
-var gulp =          require('gulp');
-var sass =          require('gulp-sass');
-var rename =        require("gulp-rename");
-var minify =        require('gulp-minify');
-var autoprefixer =  require('gulp-autoprefixer');
-var browserSync =   require('browser-sync');
-var cache = require('gulp-cache');
-var imagemin = require('gulp-imagemin');
-var imageminPngquant = require('imagemin-pngquant');
-var imageminZopfli = require('imagemin-zopfli');
-var imageminMozjpeg = require('imagemin-mozjpeg'); //need to run 'brew install libpng'
-var imageminGiflossy = require('imagemin-giflossy');
+// ****************************
+
+var gulp                = require('gulp');
+var sass                = require('gulp-sass');
+var rename              = require("gulp-rename");
+var minify              = require('gulp-minify');
+var autoprefixer        = require('gulp-autoprefixer');
+var browserSync         = require('browser-sync');
+var wait                = require('gulp-wait');
+var imagemin            = require('gulp-imagemin');
+var imageminPngquant    = require('imagemin-pngquant');
+var imageminZopfli      = require('imagemin-zopfli');
+var imageminMozjpeg     = require('imagemin-mozjpeg'); 
+var imageminGiflossy    = require('imagemin-giflossy');
+var cache               = require('gulp-cache');
 
 // *************
 // 2. Mes tâches
@@ -21,6 +23,7 @@ var imageminGiflossy = require('imagemin-giflossy');
 // Moulinette SASS
 gulp.task('sassification', function () {
     return gulp.src('./src/css/**/*.scss')
+        .pipe(wait(200))
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
@@ -35,6 +38,7 @@ gulp.task('sassification', function () {
 // Moulinette JS
 gulp.task('jsification', function () {
     return gulp.src('./src/js/*.js')
+        .pipe(wait(200))
         .pipe(minify({
             ext: {
                 min: '.min.js'
@@ -47,6 +51,7 @@ gulp.task('jsification', function () {
 // Moulinette HTML
 gulp.task('htmlification', function () {
     return gulp.src('./src/*.html')
+        .pipe(wait(200))
         .pipe(gulp.dest('./dist'));
 });
 
@@ -58,10 +63,10 @@ gulp.task('browser-sync', function () {
         }
     });
 });
-// COMPRESSION DES IMAGES
-// COMPRESSION DES IMAGES
-gulp.task('imagemin', function() {
-    return gulp.src(['./src/img/*.{gif,png,jpg}'])
+
+// Smushage
+gulp.task('compress', function () {
+    return gulp.src('src/img/*.{gif,jpg,png,svg,jpeg}')
         .pipe(cache(imagemin([
             //png
             imageminPngquant({
@@ -98,14 +103,14 @@ gulp.task('imagemin', function() {
                 quality: 90
             })
         ])))
-        .pipe(gulp.dest('./dist/img'));
+        .pipe(gulp.dest('dist/img'))
 });
 
 
 // ***********************
 // 3. Exécution des tâches
 // ***********************
-gulp.task('observe', gulp.parallel('browser-sync', 'htmlification', 'sassification', 'jsification', 'imagemin', function () {
+gulp.task('observe', gulp.parallel('browser-sync','compress', 'htmlification', 'sassification', 'jsification', function () {
     gulp.watch('./src/css/**/*.scss', gulp.series('sassification'));
     gulp.watch('./src/js/*.js', gulp.series('jsification'));
     gulp.watch('./src/*.html', gulp.series('htmlification'));
