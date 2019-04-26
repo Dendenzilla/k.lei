@@ -1,0 +1,50 @@
+:root {
+    --big-title: 80px;
+    --medium-title:32px;
+    --small-title:26px;
+    --content-start: 40px;
+    --frame-l: 1080px;
+    --gutter:40px;
+}
+header {
+    width: 100%;
+    height: 60px;
+    background-color: aqua;
+    
+}
+footer {
+    width: 100vw;
+    height: 150px;
+    background-color: aquamarine;
+}
+nav {
+    position: relative;
+    width: var(--frame-l);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: bisque;
+}
+.menu {
+    display: flex;
+    & p {
+        padding-left: 10px;
+    }
+}
+h1 {
+    font-size: var(--big-title);
+    margin: 0;
+}
+h2 {
+    font-size: var(--medium-title);
+}
+h3 {
+    font-size: var(--small-title);
+}
+.container {
+    width: var(--frame-l);
+    margin: 0 auto;
+    margin-top: var(--content-start);
+}

@@ -1,0 +1,34 @@
+.dual {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.col {
+    width: 50%;
+    padding: 0 20px;
+    margin-top: 60px;
+}
+.leftcol {
+    background-color: coral;
+}
+.rightcol {
+    background-color: crimson;
+    position: fixed;
+    bottom: 0;
+    right:0;
+}
+.panel {
+    width: 100%;
+    height: 500px;
+}
+.panelR {
+    border: 1px solid black;
+}
+header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+body {
+    background-color: coral;
+}
