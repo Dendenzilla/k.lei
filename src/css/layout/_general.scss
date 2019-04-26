@@ -9,13 +9,13 @@
 header {
     width: 100%;
     height: 60px;
-    background-color: aqua;
+    background-color: $projDarkMauve;
     
 }
 footer {
     width: 100%;
     height: 150px;
-    background-color: aquamarine;
+    background-color: $projLightMauve;
 }
 nav {
     position: relative;
@@ -26,18 +26,23 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: bisque;
 }
 .menu {
     display: flex;
     & p {
         padding-left: 20px;
-        font-size: 26px;
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+    & a {
+        text-decoration: none;
+        color: black;
     }
 }
 h1 {
     font-size: var(--big-title);
     margin: 0;
+    color: $projH1;
 }
 h2 {
     font-size: var(--medium-title);

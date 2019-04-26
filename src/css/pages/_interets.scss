@@ -9,18 +9,24 @@
     
 }
 .leftcol {
-    background-color: coral;
+    background-color: black;
     margin-top: 60px;
+    color: white;
+    & h1 {
+        color: white;
+    }
 }
 .rightcol {
-    background-color: crimson;
+    background-color: white;
     position: fixed;
     bottom: 0;
     right:0;
+    & h1 {
+        color: rgb(20, 20, 20);
+    }
 }
 .panel {
     width: 100%;
-    border: 1px solid gold;
     display: flex;
     & h1 {
         font-size: 12vw;
@@ -34,7 +40,4 @@
     position: fixed;
     top: 0;
     z-index: 10;
-}
-body {
-    background-color: coral;
 }
