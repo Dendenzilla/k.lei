@@ -1,0 +1,31 @@
+.gridP:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.gridP {
+    & .grid-item { 
+        width: 340px;
+        height: auto;
+        /* vertical gutter */
+        background-color: cadetblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
+.publi {
+    &__image {
+        padding: 20px 20px 0 20px;
+    }
+    &__txt {
+        padding: 0 20px;
+    }
+    &__more {
+        text-align: right;
+    }
+    & .chapeau {
+        margin-bottom: 30px;
+    }
+}

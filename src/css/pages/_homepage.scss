@@ -22,6 +22,16 @@
 .grid-item--height4 {
     height: 500px;
 }
-.g1 {
-    background-image: url('https://via.placeholder.com/260x200');
+.lettering {
+    // filter: blur(2px);
+    overflow: hidden;
+    & p {
+        font-size: 60px;
+        z-index: 1000;
+    }
+    & img {
+        position: absolute;
+        filter: blur(4px);
+        
+    }
 }
