@@ -1,0 +1,61 @@
+:root {
+    --big-title: 80px;
+    --medium-title:32px;
+    --small-title:26px;
+    --content-start: 40px;
+    --frame-l: 1080px;
+    --gutter:40px;
+}
+header {
+    width: 100%;
+    height: 60px;
+    background-color: $projDarkMauve;
+    
+}
+footer {
+    width: 100%;
+    height: 150px;
+    background-color: $projLightMauve;
+}
+nav {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu {
+    display: flex;
+    & p {
+        padding-left: 20px;
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+    & a {
+        text-decoration: none;
+        color: black;
+    }
+}
+h1 {
+    font-size: var(--big-title);
+    margin: 0;
+    color: $projH1;
+}
+h2 {
+    font-size: var(--medium-title);
+}
+h3 {
+    font-size: var(--small-title);
+}
+.container {
+    width: var(--frame-l);
+    margin: 0 auto;
+    margin-top: var(--content-start);
+}
+
+// @media only screen and (max-width: 1100px) {
+
+// }
