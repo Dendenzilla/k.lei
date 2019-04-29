@@ -10,3 +10,7 @@ function stickyMenu() {
     navbar.classList.remove("sticky");
   }
 }
+//BUGER ACTION
+$('.burgerMenu').click(function(){
+    $('.menu').toggleClass('fixedMenu');
+});

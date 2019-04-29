@@ -1,11 +1,14 @@
 :root {
     --big-title: 80px;
+    --big-title-med: 60px;
+    --big-title-sm: 40px;
     --medium-title:32px;
     --small-title:26px;
     --content-start: 40px;
     --frame-l: 1080px;
     --gutter:40px;
     --headhaut:60px;
+    --fontTitles: 'Roboto', sans-serif;
 }
 header {
     width: 100%;
@@ -18,6 +21,7 @@ header {
     color: white;
     text-decoration: none;
     font-size: 40px;
+    font-family: var(--fontTitles);
     & img {
         padding-right: 15px;
     }
@@ -49,15 +53,56 @@ nav {
 }
 .menu {
     display: flex;
+    
     & p {
+        transition: all .8s ease-in-out;
         padding-left: 20px;
         font-size: 22px;
         text-transform: uppercase;
+        color: white;
     }
     & a {
         text-decoration: none;
-        color: black;
+        color: white;
     }
+    &.fixedMenu {
+        flex-direction: column;
+        z-index: 1001;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        &::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: -100;
+            opacity: 0.92;
+        }
+    }
+}
+.burgerMenu {
+    height: 20px;
+    width: 20px;
+    display: none;
+    z-index: 1001;
+    cursor: pointer;
+    & span {
+        width: 100%;
+        height: 2px;
+        background-color: white;
+    }
+}
+h1, h2, h3 {
+    font-family: var(--fontTitles);
 }
 h1 {
     font-size: var(--big-title);
@@ -71,11 +116,104 @@ h3 {
     font-size: var(--small-title);
 }
 .container {
-    width: var(--frame-l);
+    max-width: var(--frame-l);
     margin: 0 auto;
     margin-top: var(--content-start);
 }
+//LAYOUT MASONRIZ
+.masonriz { /* Masonry container */
+  column-count: 4;
+  column-gap: 1em;
+   margin: 1.5em;
+    padding: 0;
+    column-gap: 1.5em;
+    font-size: .85em;
+    &.shortRiz {
+        column-count: 3;
+    }
+}
+.item {
+    display: inline-block;
+    background: #fff;
+    margin: 0 0 1.5em;
+    width: 100%;
+    padding: 8px;
+	-webkit-transition:1s ease all;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 2px 2px 4px 0 #ccc;
+}
+.item img{width:100%;}
 
-// @media only screen and (max-width: 1100px) {
+// FIN MASONRIZ
+@media only screen and (min-width: 1201px) {
+    .masonriz {
+        column-count: 4;
+    }
+}
+@media only screen and (max-width: 1200px){
+    .masonriz {
+        column-count: 3;
+        &.shortRiz {
+            column-count: 2;
+        }
+    }
+    
+}
+@media only screen and (max-width: 1100px) {
+    .menu {
+        & p {
+            font-size: 16px;
+            padding-left: 10px;
+        }
+    }
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .menu {
+        display: none;
+        & p {
+            min-width: 100%;
+            font-size: 30px;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.342);
+            }
+        }
+    }
+    .burgerMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    h1 {
+        font-size: var(--big-title-med);
+    }
+}
+@media only screen and (max-width: 768px){
+    .masonriz {
+        column-count: 2;
+    }
+}
 
-// }
+@media only screen and (max-width: 500px) {
+    .masonriz.shortRiz {
+        column-count: 1;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .masonriz {
+        column-count: 1;
+    }
+    h1 {
+        font-size: var(--big-title-sm);
+    }
+}
+

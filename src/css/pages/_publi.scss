@@ -3,8 +3,11 @@
     &__publimg {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         & img {
             padding-right: 10px;
+            max-width: 100%;
+            height: 100%;
         }
         & img:last-of-type {
             padding: 0;
@@ -16,5 +19,11 @@
     & a {
         text-decoration: none;
         color:black;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .publig__publimg img {
+        padding: 10px 0;
     }
 }
