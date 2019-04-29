@@ -5,13 +5,33 @@
     --content-start: 40px;
     --frame-l: 1080px;
     --gutter:40px;
+    --headhaut:60px;
 }
 header {
     width: 100%;
-    height: 60px;
+    height: var(--headhaut);
     background-color: $projDarkMauve;
-    
 }
+.navcent {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    & img {
+        padding-right: 15px;
+    }
+}
+.logo {
+    height: var(--headhaut);
+}
+.sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 footer {
     width: 100%;
     height: 150px;
