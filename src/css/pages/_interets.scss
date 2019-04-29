@@ -29,10 +29,10 @@
     width: 100%;
     display: flex;
     & h1 {
-        font-size: 12vw;
+        // font-size: 12vw;
     }
     & img {
-        max-width: 100%;
+        width: 100%;
         padding: 10px 0;
     }
 }
@@ -40,4 +40,10 @@
     position: fixed;
     top: 0;
     z-index: 10;
+}
+
+@media only screen and (max-width: 768px){
+    .col {
+        padding: 0 10px;
+    }
 }
