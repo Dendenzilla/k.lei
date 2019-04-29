@@ -1,5 +1,6 @@
 .publi {
-    &__image {
+    & img {
+        width: 100%;
         padding: 20px 20px 0 20px;
     }
     &__txt {
@@ -19,4 +20,56 @@
     width: 200px;
     height: 30px;
     line-height: 30px;
+}
+
+// .shortRiz {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-evenly;
+// }
+// .itemRiz {
+//     width: 320px;
+//     margin: 0 0 1.5em;
+//     padding: 8px;
+// 	-webkit-transition:1s ease all;
+//     box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     -webkit-box-sizing: border-box;
+//     box-shadow: 2px 2px 4px 0 #ccc;
+//     & img {
+//         width: 100%;
+//     }
+// }
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.grid {
+    max-width: 1080px;
+}
+.grid-sizer,
+.grid-item {
+    width: 340px;
+}
+.gutter-sizer {
+    width: 10px;
+}
+.grid-item {
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 4px 0 #ccc;
+}
+
+@media only screen and (max-width: 500px) {
+    .grid-sizer,
+    .grid-item {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .grid-sizer,
+    .grid-item {
+        width: 50%;
+    }
 }
