@@ -49,6 +49,32 @@ footer {
     height: 150px;
     background-color: $projLightMauve;
 }
+.footnav {
+    width: 400px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & .footUse {
+        align-self: center;
+        & a {
+            color: white;
+            text-decoration: none;
+        }
+        & p {
+            color: white;
+            margin: 0;
+        }
+        & p:first-of-type {
+            font-size: 24px;
+        }
+        & p:last-of-type {
+            margin: 10px 0;
+            font-size: 12px;
+        }
+    }
+}
 nav {
     position: relative;
     width: 100%;
@@ -61,8 +87,12 @@ nav {
 }
 .menu {
     display: flex;
-    
-    & p {
+    & ul {
+        list-style: none;;
+    }
+    & a {
+        text-decoration: none;
+        color: white;
         transition: all .8s ease-in-out;
         padding-left: 20px;
         font-size: 22px;
@@ -70,9 +100,17 @@ nav {
         color: white;
         font-family: var(--fontTitles);
     }
-    & a {
-        text-decoration: none;
-        color: white;
+    &.footmenu {
+        display: flex !important;
+        flex-direction: column;
+        & li {
+            list-style: none;
+        }
+        & a {
+            font-size: 10px;
+            margin-bottom: 6px;
+            padding: 0;
+        }
     }
     &.fixedMenu {
         flex-direction: column;
@@ -172,7 +210,7 @@ h3 {
 }
 @media only screen and (max-width: 1100px) {
     .menu {
-        & p {
+        & a {
             font-size: 16px;
             padding-left: 10px;
         }
@@ -183,9 +221,9 @@ h3 {
     }
 }
 @media only screen and (max-width: 900px) {
-    .menu {
+    .menuprin {
         display: none;
-        & p {
+        & a {
             min-width: 100%;
             font-size: 30px;
             text-align: center;
