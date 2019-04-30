@@ -47,6 +47,9 @@ header.sticky {
 footer {
     width: 100%;
     height: 150px;
+    height: auto;
+    padding: 15px 0;
+    margin-top: 20px;
     background-color: $projLightMauve;
 }
 .footnav {
@@ -87,8 +90,14 @@ nav {
 }
 .menu {
     display: flex;
+    align-items: center;
+    & li {
+        list-style: none;
+        padding: 10px 0;
+        margin: 10px 0;
+    }
     & ul {
-        list-style: none;;
+        list-style: none;
     }
     & a {
         text-decoration: none;
@@ -105,6 +114,8 @@ nav {
         flex-direction: column;
         & li {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
         & a {
             font-size: 10px;
