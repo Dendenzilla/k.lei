@@ -239,12 +239,9 @@ h3 {
         width: 100%;
         padding: 0 50px;
     }
-    .acti {
-        padding: 0 !important;
-    }
 }
 @media only screen and (max-width: 900px) {
-    .menuprin {
+    .menu {
         display: none;
         & a {
             min-width: 100%;
@@ -270,11 +267,28 @@ h3 {
     .masonriz {
         column-count: 2;
     }
+    .acti {
+        padding: 0 !important;
+    }
 }
 
 @media only screen and (max-width: 500px) {
     .masonriz.shortRiz {
         column-count: 1;
+    }
+    .navcent img {
+        padding-right: 5px;
+    }
+    .footnav {
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+    }
+    .txtbloc {
+        padding: 0px 10px;
     }
 }
 

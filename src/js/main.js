@@ -12,5 +12,5 @@ function stickyMenu() {
 }
 //BUGER ACTION
 $('.burgerMenu').click(function(){
-    $('.menuprin').toggleClass('fixedMenu');
+    $('.menuprin, .menufi').toggleClass('fixedMenu');
 });
