@@ -7,7 +7,16 @@
         padding: 0 20px;
     }
     &__more {
-        text-align: right;
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+        background-color: salmon;
+        font-size: 20px;
+        font-weight: bold;
+        & a {
+            text-decoration: none;
+            color: white;
+        }
     }
     & .chapeau {
         margin-bottom: 30px;
@@ -50,15 +59,16 @@
 }
 .grid-sizer,
 .grid-item {
-    width: 340px;
+    width: calc((100% / 3) - 20px);
 }
 .gutter-sizer {
-    width: 20px;
+    width: 30px;
 }
 .grid-item {
     height: auto;
     margin-bottom: 10px;
     box-shadow: 2px 2px 4px 0 #ccc;
+    background-color: linen;
 }
 
 @media only screen and (max-width: 510px) {
@@ -76,15 +86,6 @@
         width: calc(45%);
     }
     .gutter-sizer {
-        width: 5%;
-    }
-}
-@media only screen and (min-width: 931px) and (max-width: 1100px) {
-    .grid-sizer,
-    .grid-item {
-        width: 30%;
-    }
-    .gutter-sizer {
-        width: 30px;
+        width: 10%;
     }
 }
