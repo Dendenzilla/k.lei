@@ -9,9 +9,13 @@
     --gutter:40px;
     --headhaut:60px;
     --fontTitles: 'Roboto', sans-serif;
+    --fontPara: Mada, sans-serif;
 }
 p {
-    font-family: var(--fontTitles);
+    font-family: var(--fontPara);
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.6;
 }
 header {
     width: 100%;
@@ -99,6 +103,7 @@ nav {
         list-style: none;
         padding: 10px 0;
         margin: 10px 0;
+        display: inherit;
     }
     & ul {
         list-style: none;
@@ -152,6 +157,26 @@ nav {
         }
     }
 }
+.menuprin {
+    & a:after {
+        content: "";
+        display: block;
+        width: 0%;
+        padding-top: 2px;
+        border-bottom: 2px solid white;
+        transition: .5s;
+    }
+}
+.menuprin.fixedMenu {
+    & a:after {
+        display: none;
+    }
+}
+.menuprin {
+    & a:hover:after {
+    width: 95%; /* This will be the new width of your border when on hover */
+    }
+}
 .langpick {
     font-size: 16px !important;
 }
@@ -174,7 +199,12 @@ h1, h2, h3 {
 h1 {
     font-size: var(--big-title);
     margin: 0;
-    color: $projH1;
+    // color: $projH1;
+}
+.fancyH {
+	background: -webkit-linear-gradient(left, #817fbc 0%,#162874 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 h2 {
     font-size: var(--small-title);

@@ -3,6 +3,10 @@
         width: 100%;
         padding: 20px 20px 0 20px;
     }
+    & a {
+        text-decoration: none;
+        color: white;
+    }
     &__txt {
         padding: 0 20px;
     }
@@ -10,13 +14,13 @@
         text-align: center;
         margin: 0;
         padding: 10px;
-        background-color: salmon;
+        background-color: $projLightMauve;
         font-size: 20px;
         font-weight: bold;
-        & a {
-            text-decoration: none;
-            color: white;
-        }
+        transition: 0.3s all ease-in-out;
+    }
+    &__more:hover {
+        background-color: darken( $projLightMauve, 20% );
     }
     & .chapeau {
         margin-bottom: 30px;
@@ -30,25 +34,6 @@
     height: 30px;
     line-height: 30px;
 }
-
-// .shortRiz {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-evenly;
-// }
-// .itemRiz {
-//     width: 320px;
-//     margin: 0 0 1.5em;
-//     padding: 8px;
-// 	-webkit-transition:1s ease all;
-//     box-sizing: border-box;
-//     -moz-box-sizing: border-box;
-//     -webkit-box-sizing: border-box;
-//     box-shadow: 2px 2px 4px 0 #ccc;
-//     & img {
-//         width: 100%;
-//     }
-// }
 .grid:after {
     content: '';
     display: block;
@@ -70,7 +55,9 @@
     box-shadow: 2px 2px 4px 0 #ccc;
     background-color: linen;
 }
+//LOAD MORE BTN STYLE
 
+// FIN BTN STYLE
 @media only screen and (max-width: 510px) {
     .grid-sizer,
     .grid-item {
