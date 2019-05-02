@@ -1,8 +1,12 @@
-.contbloc {
-    margin: 100px 0;
+
+.timeline-TweetList {
+    display: flex;
+    flex-wrap: wrap;
 }
-@media only screen and (max-width: 700px) {
-    .contbloc {
-        margin: 50px 0;
-    }
+.timeline-TweetList-tweet {
+    width: 50%;
+}
+.SandboxRoot.env-bp-970 .timeline-Tweet-text {
+    font-size: 16px;
+    line-height: 20px;
 }

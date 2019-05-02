@@ -11,11 +11,9 @@ $('.panelL').each(function(){ plH+=$(this).outerHeight(true) });
 // ON DONNE AU BODY LA HAUTEUR DE LA SOMME DES panelR
     $("body").height(prH);
     console.log($("body").height());
-    console.log(prH);
     console.log(plH);
+    console.log(prH);
     if ( plH < prH ) {
-        var diffH = prH - plH;
-        console.log(diffH);
         $(".leftcol").css('padding-bottom', (prH - plH));
     }
 });

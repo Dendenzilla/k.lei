@@ -169,6 +169,7 @@ nav {
 }
 h1, h2, h3 {
     font-family: var(--fontTitles);
+    word-break: break-word;
 }
 h1 {
     font-size: var(--big-title);
@@ -176,7 +177,7 @@ h1 {
     color: $projH1;
 }
 h2 {
-    font-size: var(--medium-title);
+    font-size: var(--small-title);
 }
 h3 {
     font-size: var(--small-title);
@@ -290,8 +291,15 @@ h3 {
     .txtbloc {
         padding: 0px 10px;
     }
+    h1 {
+        font-size: var(--big-title-sm);
+    }
 }
-
+@media only screen and (max-width: 370px) {
+    .navcent {
+        font-size: 25px;
+    }
+}
 @media only screen and (max-width: 320px) {
     .masonriz {
         column-count: 1;
